@@ -114,10 +114,6 @@
 
   /* ---------- Hero ---------- */
   .hero{padding:76px 0 56px; border-bottom:1px solid var(--line);}
-  .hero-grid{
-    display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;
-  }
-  @media (max-width:820px){.hero-grid{grid-template-columns:1fr; gap:40px;}}
 
   .eyebrow-line{
     font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--muted);
@@ -133,11 +129,17 @@
   }
   .avail-dot{width:7px; height:7px; border-radius:50%; background:var(--teal); flex-shrink:0;}
 
-  .hero h1{
-    font-family:'Fraunces', serif; font-weight:500; font-size:clamp(2.3rem, 5vw, 3.4rem);
-    line-height:1.08; margin:0 0 20px; letter-spacing:-0.01em;
+  .hero-headline{
+    font-family:'Fraunces', serif; font-weight:500; font-size:clamp(3.1rem, 8vw, 6.4rem);
+    line-height:0.97; margin:0 0 44px; letter-spacing:-0.02em; max-width:17ch;
   }
-  .hero h1 em{font-style:italic; color:var(--amber-ink);}
+  .hero-headline em{font-style:italic; color:var(--amber-ink);}
+
+  .hero-lower{
+    display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:end;
+  }
+  @media (max-width:820px){.hero-lower{grid-template-columns:1fr; gap:36px;}}
+
   .hero p.lede{
     font-size:1.12rem; color:var(--muted); max-width:46ch; margin:0 0 32px;
   }
@@ -302,22 +304,23 @@
 </nav>
 
 <header class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow-line"><span class="rule"></span>Full-stack product developer, contact-center &amp; GenAI</div>
-      <span class="avail-badge"><span class="avail-dot"></span>Independent — open for freelance &amp; contract work</span>
-      <h1>I build the interface, the service behind it, and the <em>AI in between.</em></h1>
-      <p class="lede">Three years shipping production features for enterprise contact-center clients — from Vue and Angular front ends, through Node.js services, to the AI that automates what agents used to do by hand. I now take on select client work independently, end to end.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-primary" href="mailto:sunny.saleem.mawani@gmail.com">Start a project</a>
-        <a class="btn btn-ghost" href="#work">See the work</a>
+  <div class="wrap">
+    <div class="eyebrow-line"><span class="rule"></span>Full-stack product developer, contact-center &amp; GenAI</div>
+    <span class="avail-badge"><span class="avail-dot"></span>Independent — open for freelance &amp; contract work</span>
+    <h1 class="hero-headline">I build the interface, the service behind it, and the <em>AI in between.</em></h1>
+    <div class="hero-lower">
+      <div>
+        <p class="lede">Three years shipping production features for enterprise contact-center clients — from Vue and Angular front ends, through Node.js services, to the AI that automates what agents used to do by hand. I now take on select client work independently, end to end.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="mailto:sunny.saleem.mawani@gmail.com">Start a project</a>
+          <a class="btn btn-ghost" href="#work">See the work</a>
+        </div>
       </div>
-    </div>
-    <div class="diagram-holder">
-      <svg viewBox="0 0 340 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <!-- nodes -->
-        <rect x="14" y="24" width="118" height="44" rx="2" stroke="var(--line)" fill="var(--panel)"/>
-        <text x="73" y="42" text-anchor="middle" class="node-label">FRONTEND</text>
+      <div class="diagram-holder">
+        <svg viewBox="0 0 340 300" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- nodes -->
+          <rect x="14" y="24" width="118" height="44" rx="2" stroke="var(--line)" fill="var(--panel)"/>
+          <text x="73" y="42" text-anchor="middle" class="node-label">FRONTEND</text>
         <text x="73" y="56" text-anchor="middle" class="node-sub">Vue · Angular · React</text>
 
         <rect x="208" y="118" width="118" height="44" rx="2" stroke="var(--line)" fill="var(--panel)"/>
@@ -335,6 +338,7 @@
         <circle cx="196" cy="140" r="3.5" fill="var(--amber)"/>
         <circle cx="154" cy="190" r="3.5" fill="var(--amber)"/>
       </svg>
+    </div>
     </div>
   </div>
 </header>
